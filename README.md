@@ -11,7 +11,7 @@ To clone and run this repository you'll need [Git](https://git-scm.com) and [Nod
 # Clone this repository
 git clone https://github.com/tarunvelli/electron-question-paper-scrambler
 # Go into the repository
-cd electron-quick-start
+cd electron-question-paper-scrambler
 # Install dependencies
 npm install
 # Run the app

@@ -1,5 +1,5 @@
 {
-  "name": "electron-scrambler",
+  "name": "electron-question-paper-randomizer",
   "version": "1.0.0",
   "description": "A app to shuffle questions and make multiple sets of a question paper",
   "main": "main.js",

@@ -25,7 +25,7 @@
 		button, input {
 			height: 22px !important;
 			line-height: 0px !important;
-			padding: 0 5px !important; 
+			padding: 0 5px !important;
 			margin: 0 !important;
 		}
 		input {
@@ -40,28 +40,28 @@
 			margin: 0px !important;
 		}
 	</style>
-	
+
   <!-- JS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <script src="scramble.js"></script>
-	
+
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <!-- <link rel="icon" type="image/png" href="images/favicon.png">
-  –––––––––––––––––––––––––––––––––––––––––––––––––– --> 
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
 </head>
 <body>
 
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  
+
     <div class="row">
-      
+
 <div class="two columns">
 
 <center>
-<table> 
+<table>
 <tr><td><input type=button value=&pi; onClick=addsymb(this.value),show()><td><input type=button value=&tau; onClick=addsymb(this.value),show()><td><input type=button value=&sigma; onClick=addsymb(this.value),show()></tr>
 <tr><td><input type=button value=&chi; onClick=addsymb(this.value),show()><td><input type=button value=&nu; onClick=addsymb(this.value),show()><td><input type=button value=&theta; onClick=addsymb(this.value),show()></tr>
 <tr><td><input type=button value=&eta; onClick=addsymb(this.value),show()><td><input type=button value=&psi; onClick=addsymb(this.value),show()><td><input type=button value=&lambda; onClick=addsymb(this.value),show()></tr>
@@ -89,17 +89,17 @@
 </form>
 
 
-<button onClick=build(1)>build</button> &nbsp; 
-<!-- <button onClick=show()>show</button> &nbsp; --> 
-<button onClick=scramble()>scramble</button> &nbsp; 
+<button onClick=prebuild(1)>build</button> &nbsp;
+<!-- <button onClick=show()>show</button> &nbsp; -->
+<button onClick=scramble()>scramble</button> &nbsp;
 <!-- <button onClick=check()>check</button> &nbsp; --> <br> <br>
-<button onClick=scramble4()>scramble * 4</button> &nbsp; 
+<button onClick=scramble4()>build * 4</button> &nbsp;
 
 </div>
 
 
 
-	
+
 <div id="tabdiv" class="six columns">
 
 <table width=100% id="maintab" border=1>
@@ -114,7 +114,7 @@
 <a href="" id="down"></a>
 
     </div>
-  
+
 
 <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->

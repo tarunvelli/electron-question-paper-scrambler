@@ -14,3 +14,5 @@ cd electron-quick-start
 npm install
 # Run the app
 npm start
+
+#After cicking build, the output files can be founds in the output folder.

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Scrambler</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+	<style>
+		button, input {
+			height: 22px !important;
+			line-height: 0px !important;
+			padding: 0 5px !important; 
+			margin: 0 !important;
+		}
+		input {
+		text-align:left;
+		text-transform:none;
+		}
+		td, th {
+			padding: 0px 10px !important;
+			border: 1px solid #fff
+		}
+		table, form {
+			margin: 0px !important;
+		}
+	</style>
+	
+  <!-- JS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="scramble.js"></script>
+	
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- <link rel="icon" type="image/png" href="images/favicon.png">
+  –––––––––––––––––––––––––––––––––––––––––––––––––– --> 
+
+</head>
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  
+    <div class="row">
+      
+<div class="two columns">
+
+<center>
+<table> 
+<tr><td><input type=button value=&pi; onClick=addsymb(this.value),show()><td><input type=button value=&tau; onClick=addsymb(this.value),show()><td><input type=button value=&sigma; onClick=addsymb(this.value),show()></tr>
+<tr><td><input type=button value=&chi; onClick=addsymb(this.value),show()><td><input type=button value=&nu; onClick=addsymb(this.value),show()><td><input type=button value=&theta; onClick=addsymb(this.value),show()></tr>
+<tr><td><input type=button value=&eta; onClick=addsymb(this.value),show()><td><input type=button value=&psi; onClick=addsymb(this.value),show()><td><input type=button value=&lambda; onClick=addsymb(this.value),show()></tr>
+<tr><td><input type=button value=&delta; onClick=addsymb(this.value),show()><td><input type=button value=&phi; onClick=addsymb(this.value),show()><td><input type=button value=&mu; onClick=addsymb(this.value),show()></tr>
+<tr><td><input type=button value=&alpha; onClick=addsymb(this.value),show()><td><input type=button value=&beta; onClick=addsymb(this.value),show()><td><input type=button value=&gamma; onClick=addsymb(this.value),show()></tr>
+</table>
+<table>
+<tr><td><input type=button value="Next line" onClick=addNewLine(),show()><td></tr>
+<tr><td><input id="sup" type=text size=5 ><input type=button value=sup onClick=superScript(),show()></tr>
+<tr><td><input id="sub" type=text size=5 ><input type=button value=sub onClick=subScript(),show()></tr>
+</table>
+</center>
+</div>
+
+
+<div class="four columns">
+
+<button onClick="addsect()" >Add section</button>
+<button onClick="removesect()" >Remove section</button>
+
+
+
+<form id=qs name=qs>
+
+</form>
+
+
+<button onClick=build(1)>build</button> &nbsp; 
+<!-- <button onClick=show()>show</button> &nbsp; --> 
+<button onClick=scramble()>scramble</button> &nbsp; 
+<!-- <button onClick=check()>check</button> &nbsp; --> <br> <br>
+<button onClick=scramble4()>scramble * 4</button> &nbsp; 
+
+</div>
+
+
+
+	
+<div id="tabdiv" class="six columns">
+
+<table width=100% id="maintab" border=1>
+<tbody id="tab">
+<tr> <td> <center id="center">Question Paper <hr> </center> </tr>
+</tbody>
+</table>
+
+</div>
+
+
+<a href="" id="down"></a>
+
+    </div>
+  
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>

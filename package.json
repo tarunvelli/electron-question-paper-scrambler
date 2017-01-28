@@ -1,0 +1,21 @@
+{
+  "name": "electron-scrambler",
+  "version": "1.0.0",
+  "description": "A app to shuffle questions and make multiple sets of a question paper",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/electron/electron-quick-start",
+  "keywords": [
+    "Electron",
+    "Question paper",
+    "Shuffle",
+    "Scramble",
+    "demo"
+  ],
+  "author": "Tarun Velli",
+  "devDependencies": {
+    "electron": "^1.4.1"
+  }
+}

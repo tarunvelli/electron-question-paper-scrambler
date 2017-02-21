@@ -45,11 +45,14 @@ function removesect() {
 
 function addsect() {
 	counter();
+
 	var fr=document.createElement("input");
 	fr.setAttribute("value"," Section " + c );
 	fr.setAttribute("id","Section" + c );
 	fr.setAttribute("size","10");
 	fr.setAttribute("onkeyup","show()");
+	fr.setAttribute("onkeypress","handle(event)");
+	fr.setAttribute("onfocus","blurrer(),this.name='act'");
 
 	var qr=document.createElement("input");
 	qr.setAttribute("type","button")
@@ -108,22 +111,23 @@ function addsect() {
 	tabe.id="tabe"+c;
 	tabbe.id="tabbe"+c;
 
-	//tabe.setAttribute("border","1");
 	tabe.setAttribute("width","100%");
 	document.getElementById("tde"+c).appendChild(tabe);
 	document.getElementById("tabe"+c).appendChild(tabbe);
+
 }
 
 function removeques(ex) {
+
 	document.getElementById("p"+ex).removeChild(document.getElementById("in" + ex + "." + n[ex]));
 	document.getElementById("p"+ex).removeChild(document.getElementById("tx" + ex + "." + n[ex]));
 	document.getElementById("p"+ex).removeChild(document.getElementById("brr" + ex + "." + n[ex]));
 
 	document.getElementById("tabe"+ex).removeChild(document.getElementById("trn" + ex + "." + n[ex]));
-	//document.getElementById("trn" + ex + "." + n[ex]).removeChild(document.getElementById("tdne" + ex + "." + n[ex]));
-	//document.getElementById("trn" + ex + "." + n[ex]).removeChild(document.getElementById("tdn" + ex + "." + n[ex]));
+
 	n[ex]=n[ex]-1;
 }
+
 
 function addques(ex) {
 	n[ex]=n[ex]+1;
@@ -132,7 +136,9 @@ function addques(ex) {
 	tx.setAttribute("value","Q "+n[ex]+")");
 	tx.setAttribute("size",3);
 	tx.setAttribute("onKeyUp","show()");
+	tx.setAttribute("onfocus","blurrer(),this.name='act'");
 	tx.id="tx" + ex + "." +n[ex];
+	tx.setAttribute("onkeypress","handle(event)");
 
 	var inx=document.createElement("input");
 	inx.setAttribute("id","in" + ex + "." + n[ex]);
@@ -140,6 +146,7 @@ function addques(ex) {
 	inx.setAttribute("size","30");
 	inx.setAttribute("onfocus","blurrer(),this.name='act'");
 	inx.setAttribute("onkeyup","show()");
+	inx.setAttribute("onkeypress","handle(event)");
 
 	var brr=document.createElement("br");
 	brr.id="brr" + ex + "." + n[ex];
@@ -181,39 +188,67 @@ function show() {
 
 var i;
 var j;
-var dope;
 
 function blurrer() {
-	for (i=1;i<=c;i++) {
-		for (j=1;j<=n[i];j++) {
-			document.getElementById("in" + i + "." + j).setAttribute("name","not");
-		}
+	var x = document.getElementsByTagName("input");
+    for (i=0;i<x.length;i++) {
+    x[i].setAttribute("name","not");
 	}
 }
 
 function addsymb(sym) {
-	var oldtxt = document.getElementsByName('act')[0].value;
-	//document.getElementsByName('act').value = oldtxt + sym;
-	document.getElementsByName('act')[0].value = oldtxt + sym;
-	document.getElementsByName('act')[0].focus();
+	var el = document.getElementsByName('act')[0];
+	var start = el.selectionStart;
+	var end = el.selectionEnd;
+	var text = el.value;
+	var before = text.substring(0, start);
+	var after  = text.substring(end, text.length);
+	el.value = (before + sym + after);
+	el.selectionStart = el.selectionEnd = start + sym.length;
+	el.focus();
+}
+
+function handle(e){
+        if(e.keyCode === 13){
+            e.preventDefault(); // Ensure it is only this code that rusn
+            addNewLine();
+        }
 }
 
 function addNewLine() {
-	var oldtxt = document.getElementsByName('act')[0].value;
-	document.getElementsByName('act')[0].value = oldtxt + "<br>";
-	document.getElementsByName('act')[0].focus();
+	var el = document.getElementsByName('act')[0];
+	var start = el.selectionStart;
+  var end = el.selectionEnd;
+  var text = el.value;
+  var before = text.substring(0, start);
+  var after  = text.substring(end, text.length);
+  el.value = (before + "<br>" + after);
+  el.selectionStart = el.selectionEnd = start + "<br>".length;
+  el.focus();
 }
 
 function superScript() {
-	var oldtxt = document.getElementsByName('act')[0].value;
-	document.getElementsByName('act')[0].value = oldtxt + "<sup>"+document.getElementById("sup").value+"</sup>" ;
-	document.getElementsByName('act')[0].focus();
+	var el = document.getElementsByName('act')[0];
+	var start = el.selectionStart;
+  var end = el.selectionEnd;
+  var text = el.value;
+  var before = text.substring(0, start);
+  var after  = text.substring(end, text.length);
+  el.value = (before + "<sup>"+document.getElementById("sup").value+"</sup>" + after);
+  el.selectionStart = el.selectionEnd = start + "<sup>"+document.getElementById("sup").value+"</sup>".length;
+  el.focus();
 }
 
 function subScript() {
-	var oldtxt = document.getElementsByName('act')[0].value;
-	document.getElementsByName('act')[0].value = oldtxt + "<sub>"+document.getElementById("sub").value+"</sub>" ;
-	document.getElementsByName('act')[0].focus();
+	var el = document.getElementsByName('act')[0];
+	var start = el.selectionStart;
+  var end = el.selectionEnd;
+  var text = el.value;
+  var before = text.substring(0, start);
+  var after  = text.substring(end, text.length);
+  el.value = (before + "<sub>"+document.getElementById("sub").value+"</sub>" + after);
+  el.selectionStart = el.selectionEnd = start + "<sub>"+document.getElementById("sub").value+"</sub>".length;
+  el.focus();
 }
 /*
 
@@ -229,12 +264,11 @@ function addImg() {
 	document.getElementsByName('act')[0].value = oldtxt + "<img src="+"'" +path+"'" +" "+"height="+h+" "+"width="+w+" "+">" ;
 
 	document.getElementsByName('act')[0].focus();
+
+
 }
 
-********************************************
-
 */
-
 function scramble4() {
 	for (var scrm=1;scrm <=4; scrm++) {
 	show();
@@ -251,7 +285,7 @@ var tmp = [[]];
 
 function check() {
 	for (mx=1;mx<=c;mx++) {
-	for (nx=1;nx<=n[mx];nx++) {
+	 for (nx=1;nx<=n[mx];nx++) {
 		if(!swap)
 		document.getElementById("tdn" + mx + "." + nx).innerHTML=document.getElementById("in" + mx + "." + nx).value;
 		else
@@ -269,9 +303,9 @@ for (mx=1;mx<=c;mx++) {
 			for (nx=1;nx<=n[mx];nx++) {
 				tmp[mx][nx]  = document.getElementById("tdn" + (mx) + "." + (nx)).innerHTML;
 				if (document.getElementById("chkbox"+mx).checked == true) {
-				t=Math.ceil(Math.random()*nx);
+  				t=Math.ceil(Math.random()*nx);
 				}
-				else {
+	  			else {
 				t=nx;
 				}
 				swap = tmp[mx][nx];

@@ -18,4 +18,10 @@ npm install
 npm start
 ```
 
+- The "Build" button saves a single shuffled copy
+
+- The "Scramble" button shuffles the questions in the page but doesnt save any copy
+
+- The "Scramle*4" button saves 4 shuffled copies of the paper 
+
 After cicking build, the output files can be founds in the output folder.

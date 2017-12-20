@@ -15,7 +15,7 @@ cd electron-question-paper-scrambler
 # Install dependencies
 npm install
 # Run the app
-electron .
+npm start
 ```
 
 - The "Build" button saves a single shuffled copy
